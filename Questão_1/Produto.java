@@ -23,10 +23,10 @@ public class Produto {
         }
         return total;
     }
-
+    
     @Override
     public String toString() {
-        return "Produto [nome=" + nome + ", itens=" + itens + "]";
+        return "Produto = " + "nome: " + nome + ", itens: " + itens;
     }
 
 
