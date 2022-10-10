@@ -7,12 +7,13 @@ public class Produto {
     private String nome;
     private ArrayList<Item> itens;
 
-    public Produto(String nome) {
+    public Produto(String nome, ArrayList<Item> itens) {
         this.nome = nome;
+        this.itens = itens;
     }
 
-    public void add_item(Item item) {
-        itens.add(item);
+    public ArrayList<Item> add_item() {
+        return itens;
     }
 
     
@@ -23,10 +24,16 @@ public class Produto {
         }
         return total;
     }
+
     
-    @Override
     public String toString() {
-        return "Produto = " + "nome: " + nome + ", itens: " + itens;
+        String itens = "";
+        for (Item item : this.itens){
+            itens += String.format("%s\n", item);
+        } 
+        
+        return "\nNome do produto: "+ nome +"\nValor total: "+ valor_total() +"\nItens: \n"+ itens;
+    
     }
 
 

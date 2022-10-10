@@ -19,7 +19,7 @@ public class Item {
     
     @Override
     public String toString() {
-        return "Item = " + "nome: " + nome + ", Preço: " + preco + '}';
+        return nome + ", Preço: " + preco;
     }
     
 }
