@@ -17,4 +17,22 @@ public class Carro {
         this.qPessoas = qPessoas;
         this.capacidadeMax = capacidadeMax;
     }
+
+
+    public String getModelo() {
+        return modelo;
+    }
+
+
+    public int getqPessoas() {
+        return qPessoas;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Carro: " + modelo + "\nQuantidade de Pessoas: " + qPessoas;
+    }
+
+
 }
