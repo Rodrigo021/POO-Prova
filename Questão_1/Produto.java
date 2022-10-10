@@ -15,8 +15,13 @@ public class Produto {
         itens.add(item);
     }
 
-    private void valor_total() {
-        
+    
+    public double valor_total() {
+        double total = 0;
+        for (Item item : itens) {
+            total+= item.getPreco();
+        }
+        return total;
     }
 
     @Override
