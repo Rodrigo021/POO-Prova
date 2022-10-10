@@ -1,5 +1,3 @@
-package primeiraquestao;
-
 public class Google extends Plataforma {
 
     @Override

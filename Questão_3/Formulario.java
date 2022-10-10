@@ -1,5 +1,3 @@
-package primeiraquestao;
-
 public class Formulario implements Login {
     protected String email;
     protected String senha;

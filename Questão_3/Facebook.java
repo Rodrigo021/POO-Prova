@@ -1,5 +1,3 @@
-package primeiraquestao;
-
 public class Facebook extends Plataforma {
 
     @Override
