@@ -4,5 +4,6 @@ public class Facebook extends Plataforma {
     public void logar() {
         System.out.println("Logando com Facebook");
     }
+ 
     
 }
