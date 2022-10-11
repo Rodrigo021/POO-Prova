@@ -1,7 +1,8 @@
 public class ContaCorrente {
+
     protected double saldo;
-    
-    public void conta(){
+
+    public void conta() {
     }
 
     public ContaCorrente(double saldo) {
@@ -15,31 +16,40 @@ public class ContaCorrente {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-       
+
     public void depositar(int v) {
-        if (v < 0){
-            this.setSaldo(v + this.getSaldo());
-    } else{
+        if (v < 0) {
             System.out.println("Ação Inválida");
+        } else {
+            this.setSaldo(v + this.getSaldo());  
         }
     }
-    protected void sacar(int v) {
-        if (saldo - v < 0 ){
-            if (this.getSaldo() >= v){
+
+    protected boolean sacar(double v) {
+        if (saldo - v < 0) {
+            System.out.println("Acão Inválida.");
+            return false;
+        } else {
+            if (this.getSaldo() >= v) {
                 this.setSaldo(this.getSaldo() - v);
                 System.out.println("Saque realizado com sucesso.");
+                return true;
             } else {
                 System.out.println("Saldo Insuficiente");
+                return false;
             }
-        } else {
-            System.out.println("Ação Inválida");
         }
     }
-    protected boolean transferir(ContaCorrente conta, double ValorTransferido){
-        this.sacar((int) ValorTransferido);
-        conta.depositar((int) ValorTransferido);
-        return true;
+
+    protected boolean transferir(ContaCorrente conta, double ValorTransferido) {
+        boolean statusSacar = this.sacar((int) ValorTransferido);
+
+        if (statusSacar) {
+            conta.depositar((int) ValorTransferido);
+            return true;
+        }
+        
+        return false;
     }
 
     @Override
